@@ -1,4 +1,4 @@
-class RNAStructViz < Formula
+class Rnastructviz < Formula
   desc "CT file viewer and RNA structure comparison tool"
   homepage "https://github.com/gtDMMB/RNAStructViz"
   url "https://github.com/gtDMMB/RNAStructViz/releases/download/v1.1-with-cairo/RNAStructViz-source.tar.gz"
