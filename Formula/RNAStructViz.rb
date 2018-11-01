@@ -3,7 +3,7 @@ class Rnastructviz < Formula
   homepage "https://github.com/gtDMMB/RNAStructViz"
   url "https://github.com/gtDMMB/RNAStructViz/releases/download/v1.1-with-cairo/RNAStructViz-source.tar.gz"
   version "1.1-with-cairo"
-  sha256 "09ea8ae57aa5a5c0e017607d69e4beba0227181e431a9cbb54c1dfa5d082e3b3"
+  sha256 "2064315389d62021b62c1d354df4dbf58f15811ae0a904081fd4f4562841ba98"
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "pkg-config"
