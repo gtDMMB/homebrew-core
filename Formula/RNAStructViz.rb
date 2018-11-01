@@ -13,7 +13,7 @@ class Rnastructviz < Formula
   def install
     system "make", "clean"
     system "make"
-    system "make", "install"
+    system "make", "install", "INSTALL_PREFIX=#{prefix}"
   end
 
   test do
