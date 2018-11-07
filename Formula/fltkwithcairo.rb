@@ -29,7 +29,7 @@ class Fltkwithcairo < Formula
     system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
     system "make", "clean"
     system "./configure", *config_args
-    system "patch", "-p0", "cairomojaveV4.patch"
+    system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
     system "make", "install"
   end
 
