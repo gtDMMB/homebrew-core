@@ -26,7 +26,7 @@ class Fltkwithcairo < Formula
       "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
     ]
-    system "wget", "https://github.com/gtDMMB/homebrew-core/LocalPatches/cairomojaveV4.patch"
+    system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
     system "make", "clean"
     system "./configure", *config_args
     system "patch", "-p0", "<cairomojaveV4.patch"
