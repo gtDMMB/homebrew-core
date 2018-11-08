@@ -27,11 +27,11 @@ class Fltkwithcairo < Formula
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
     ]
     system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
-    system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV5.patch"
+    system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV6.patch"
     system "make", "clean"
     system "./configure", *config_args
     system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
-    system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV5.patch"
+    system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
     system "make", "install"
   end
 
