@@ -1,0 +1,34 @@
+Index: cairo/Fl_Cairo.cxx
+===================================================================
+--- cairo/Fl_Cairo.cxx	(revision 13113)
++++ cairo/Fl_Cairo.cxx	(working copy)
+@@ -31,6 +31,8 @@
+ #elif defined(_WIN32)
+ #  include <cairo-win32.h>
+ #elif defined(__APPLE_QUARTZ__) // PORTME: Cairo Support
++#  include <../src/Fl_Screen_Driver.H>
++#  include "../src/drivers/Cocoa/Fl_Cocoa_Window_Driver.H"
+ #  include <cairo-quartz.h>
+ #else
+ #  error Cairo is not supported on this platform.
+@@ -103,7 +105,19 @@
+ # elif   defined(_WIN32)
+     return cairo_win32_surface_create((HDC) gc);
+ # elif defined(__APPLE_QUARTZ__)
+-    return cairo_quartz_surface_create_for_cg_context((CGContext*) gc, W, H);
++  CGAffineTransform mat = CGContextGetCTM((CGContextRef)gc);
++  if (mat.d > 0) { // necessary for layer-backed Cairo windows
++    CGContextRestoreGState((CGContextRef)gc);
++    float s = 1./Fl::screen_driver()->scale(0);
++    float offset = 0.5;
++    if (Fl_Cocoa_Window_Driver::driver(Fl_Window::current())->mapped_to_retina()) {
++      s /= 2.; offset *= 2.;
++    }
++    CGContextScaleCTM((CGContextRef)gc, s, -s);
++    CGContextTranslateCTM((CGContextRef)gc, -offset, -H/s +offset);
++    CGContextSaveGState((CGContextRef)gc);
++  }
++  return cairo_quartz_surface_create_for_cg_context((CGContextRef) gc, W, H);
+ # else
+ #  error Cairo is not supported under this platform.
+ # endif
