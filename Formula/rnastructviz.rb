@@ -21,8 +21,11 @@ class Rnastructviz < Formula
     system "git", "clone", "https://github.com/gtDMMB/RNAStructViz.git"
     Dir.chdir("RNAStructViz")
     system "make", "clean"
-    system makeExportPrefix, "make"
-    system "make", "install", "INSTALL_PREFIX=#{prefix}"
+    if makeExportPrefix != ""
+      system makeExportPrefix, "make"
+    elsif
+      system "make", "install", "INSTALL_PREFIX=#{prefix}"
+    end
   end
 
   test do
