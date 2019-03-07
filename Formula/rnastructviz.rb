@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.4.5-testing.tar.gz"
   sha256 "e8b8eb1e6cdf006a97c84bfe6695d495b3c52aabaa37d95e577f95a166625068"
   version "v1.4.5-testing"
-  revision 1
+  revision 2
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "pkg-config"
