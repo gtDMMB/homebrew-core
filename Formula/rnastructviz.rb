@@ -12,7 +12,7 @@ class Rnastructviz < Formula
   depends_on "curl"
   depends_on "coreutils"
   
-  option :universal
+  #option :universal
   option "with-clang", "Use the *clang* compiler instead of the default gcc"
 
   def install
