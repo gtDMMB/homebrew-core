@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
   version "2.4.11"
-  revision 5
+  revision 6
 
   #fails_with :clang # needs OpenMP
 
@@ -14,7 +14,7 @@ class Viennarna < Formula
   depends_on "mpfr"
 
   def install
-    system "CC=gcc", "CXX=g++", "./configure", "-v",
+    system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
       "--disable-openmp",
@@ -22,7 +22,9 @@ class Viennarna < Formula
       " --without-python", 
       " --without-python3", 
       " --without-perl",
-      "--prefix=#{prefix}"
+      "--prefix=#{prefix}",
+      "CC=gcc", 
+      "CXX=g++"
     system "make"
     #ENV.deparallelize
     system "make", "install"
