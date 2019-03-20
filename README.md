@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/22165688/54707305-25adf800-4b17-11e9-8ad2-eceac299363e.png" />
+
 # Welcome to the gtDMMB Local Homebrew packages repository!
 
 We maintain several custom *Homebrew* taps as packages in our repository here 
