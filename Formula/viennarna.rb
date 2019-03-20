@@ -4,22 +4,21 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
   version "2.4.11"
-  revision 3
+  revision 4
 
-  fails_with :clang # needs OpenMP
+  #fails_with :clang # needs OpenMP
 
   depends_on "gcc" if OS.mac? # for OpenMP
-  depends_on "python@2"
+  #depends_on "python@2"
   depends_on "pkg-config"
 
   def install
     system "./configure",
       "--disable-debug",
       "--disable-dependency-tracking",
-      "--with-python",
       "--prefix=#{prefix}"
     system "make"
-    ENV.deparallelize
+    #ENV.deparallelize
     system "make", "install"
   end
 end
