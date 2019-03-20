@@ -5,8 +5,8 @@
 We maintain several custom *Homebrew* taps as packages in our repository here 
 for the convenience of our users on recent Mac OSX platforms:
 * **FLTKWithCairo**: [Tap Bottle Stats](https://bintray.com/homebrew/bottles/fltkwithcairo/#statistics) | [Formula](https://github.com/gtDMMB/homebrew-core/blob/master/Formula/fltkwithcairo.rb)
-* **ViennaRNA**: [Tap Bottle Stats](https://bintray.com/homebrew/bottles/viennarna/#statistics) | [Formula](https://github.com/gtDMMB/homebrew-core/blob/master/Formula/viennarna.rb)
-* **RNAStructViz**: [Tap Bottle Stats](https://bintray.com/homebrew/bottles/rnastructviz/#statistics) | [Formula](https://github.com/gtDMMB/homebrew-core/blob/master/Formula/rnastructviz.rb)
+* **ViennaRNA**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Tap Bottle Stats](https://bintray.com/homebrew/bottles/viennarna/#statistics) | [Formula](https://github.com/gtDMMB/homebrew-core/blob/master/Formula/viennarna.rb)
+* **RNAStructViz**: &nbsp;&nbsp;[Tap Bottle Stats](https://bintray.com/homebrew/bottles/rnastructviz/#statistics) | [Formula](https://github.com/gtDMMB/homebrew-core/blob/master/Formula/rnastructviz.rb)
 
 # Installation of our packages
 
