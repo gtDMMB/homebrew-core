@@ -10,6 +10,7 @@ class Viennarna < Formula
 
   depends_on "gcc" if OS.mac? # for OpenMP
   depends_on "python@2"
+  depends_on "pkg-config"
 
   def install
     system "./configure",
