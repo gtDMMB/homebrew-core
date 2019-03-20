@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
   version "2.4.11"
-  revision 13
+  revision 14
 
   fails_with :clang # needs OpenMP
 
@@ -12,11 +12,9 @@ class Viennarna < Formula
   depends_on "pkg-config"
   depends_on "mpfr"
   depends_on "wget"
-  depends_on "autoconf"
+  depends_on "gsl"
 
   def install
-    #system "autoreconf", "-v"
-    #system "make", "clean"
     system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
     system "tar", "xvzf", "ViennaRNA-2.4.11.tar.gz"
     Dir.chdir("ViennaRNA-2.4.11")
@@ -26,6 +24,7 @@ class Viennarna < Formula
       "--without-python", 
       "--without-python3", 
       "--without-perl",
+      "--disable-openmp",
       "--prefix=#{prefix}",
       "CC=gcc", 
       "CXX=g++"
