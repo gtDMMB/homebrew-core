@@ -12,8 +12,10 @@ class Viennarna < Formula
   #depends_on "python@2"
   depends_on "pkg-config"
   depends_on "mpfr"
+  depends_on "wget"
 
   def install
+    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
     Dir.chdir("ViennaRNA-2.4.11")
     system "./configure", "-v",
       "--disable-debug",
