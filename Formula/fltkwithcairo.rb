@@ -12,6 +12,11 @@ class Fltkwithcairo < Formula
   depends_on "jpeg"
   depends_on "libpng"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-core"
+    sha256 "4b379d7121c831032bf837b4d640694daff77186e01a41483a26c672b15ecc22" => :mojave
+  end
+  
   def install
     archcmd = "uname -m"
     sysarch = `#{archcmd}`.tr("\n", "")
