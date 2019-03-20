@@ -4,9 +4,9 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
   version "2.4.11"
-  revision 11
+  revision 12
 
-  #fails_with :clang # needs OpenMP
+  fails_with :clang # needs OpenMP
 
   depends_on "gcc" if OS.mac? # for OpenMP
   #depends_on "python@2"
@@ -17,15 +17,18 @@ class Viennarna < Formula
 
   def install
     #system "autoreconf", "-v"
-    system "make", "clean"
+    #system "make", "clean"
+    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
+    system "tar", "xvzf", "ViennaRNA-2.4.11.tar.gz"
+    Dir.chdir("ViennaRNA-2.4.11")
     system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
       "--disable-openmp",
       "--enable-static-executables",
-      " --without-python", 
-      " --without-python3", 
-      " --without-perl",
+      "--without-python", 
+      "--without-python3", 
+      "--without-perl",
       "--prefix=#{prefix}",
       "CC=gcc", 
       "CXX=g++"
