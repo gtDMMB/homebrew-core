@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
   version "2.4.11"
-  revision 10
+  revision 11
 
   #fails_with :clang # needs OpenMP
 
@@ -16,7 +16,8 @@ class Viennarna < Formula
   depends_on "autoconf"
 
   def install
-    system "autoreconf", "-v"
+    #system "autoreconf", "-v"
+    system "make", "clean"
     system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
