@@ -4,8 +4,10 @@ class Fltkwithcairo < Formula
   url "http://fltk.org/pub/fltk/snapshots/fltk-1.4.x-r13107.tar.bz2"
   version "1.4.x-r13107"
   sha256 "5193a66ae1f07d477d7c26f78f3b6389594e870fd3f71dbc572ed8fcf776daf6"
+  revision 2
 
   depends_on "wget"
+  depends_on "libffi"
   depends_on "cairo"
   depends_on "jpeg"
   depends_on "libpng"
