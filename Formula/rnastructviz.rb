@@ -1,10 +1,10 @@
 class Rnastructviz < Formula
   desc "CT file viewer and graphical RNA structure comparison tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.4.6-testing.tar.gz"
-  sha256 "3663deec559a106b2586930e1230eae1f9021953343a6c437366d9d3e7503d81"
-  version "v1.4.6-testing"
-  revision 5
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.4.7-testing.tar.gz"
+  sha256 "1d346253347376a8b5e328f2894f65c05c3b0edbb172001722ad95416ccb9ce3"
+  version "v1.4.7-testing"
+  revision 1
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -19,8 +19,8 @@ class Rnastructviz < Formula
   def install
     makeExportPrefix = ""
     makeExportPrefix << "STRUCTVIZ_COMPILER=clang++" if build.with? "clang"
-    system "git", "clone", "https://github.com/gtDMMB/RNAStructViz.git"
-    Dir.chdir("RNAStructViz")
+    #system "git", "clone", "https://github.com/gtDMMB/RNAStructViz.git"
+    #Dir.chdir("RNAStructViz")
     #system "git", "reset", "--hard", version
     system "make", "clean"
     if makeExportPrefix != ""
