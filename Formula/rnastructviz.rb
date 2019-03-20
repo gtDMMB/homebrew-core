@@ -4,10 +4,10 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.4.6-testing.tar.gz"
   sha256 "3663deec559a106b2586930e1230eae1f9021953343a6c437366d9d3e7503d81"
   version "v1.4.6-testing"
-  revision 4
+  revision 5
 
   depends_on "gtDMMB/core/fltkwithcairo"
-  #depends_on "gtDMMB/core/viennarna"
+  depends_on "gtDMMB/core/viennarna"
   depends_on "pkg-config"
   depends_on "git"
   depends_on "curl"
@@ -21,7 +21,7 @@ class Rnastructviz < Formula
     makeExportPrefix << "STRUCTVIZ_COMPILER=clang++" if build.with? "clang"
     system "git", "clone", "https://github.com/gtDMMB/RNAStructViz.git"
     Dir.chdir("RNAStructViz")
-    system "git", "reset", "--hard", "v1.3.9-production"
+    #system "git", "reset", "--hard", version
     system "make", "clean"
     if makeExportPrefix != ""
       system makeExportPrefix, "make"
