@@ -2,7 +2,7 @@ class Viennarna < Formula
   desc "ViennaRNA and RNAlib: Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/RNA/"
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
-  #sha256 "0a8acfc3445da2dbdb42bd306ecdaf44e26ab40ca58987b6917c3899ef9bf310"
+  #sha256 "9913fc04a6f2ab380bd492301f9c5a07cfe1b6c9ca437261de03691c3d3d6837"
   version "2.4.11"
   revision 19
 
