@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.5.0-testing.tar.gz"
   sha256 "d4e73ab4a2e93241c280df73745273186a34bae80b64cffaa0d5b13f5c72a1e2"
   version "v1.5.0-testing"
-  revision 2
+  revision 3
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -12,11 +12,11 @@ class Rnastructviz < Formula
   depends_on "curl"
   depends_on "coreutils"
   
-  bottle do
-    root_url "https://homebrew.bintray.com/bottles-core"
-    cellar :any
-    sha256 "ea3c8cf3270c5dcc38eb9480cb5475c6f87b9d1ebdd7c9fa10aded6279d166a7" => :mojave
-  end
+  #bottle do
+  #  root_url "https://homebrew.bintray.com/bottles-core"
+  #  cellar :any
+  #  sha256 "ea3c8cf3270c5dcc38eb9480cb5475c6f87b9d1ebdd7c9fa10aded6279d166a7" => :mojave
+  #end
   
   #option :universal
   option "with-clang", "Use the *clang* compiler instead of the default gcc"
