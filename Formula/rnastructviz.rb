@@ -1,22 +1,16 @@
 class Rnastructviz < Formula
   desc "CT file viewer and graphical RNA structure comparison tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.5.1-testing.tar.gz"
-  sha256 "b6bf6d31f039630335322b0884af27b352ddb547b6a21c551649fa05422404e1"
-  version "v1.5.1-testing"
-  revision 2
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.5.2-testing.tar.gz"
+  sha256 "56e899d92ef868d2cf4539521111310737a9a72fbc3c7017c225420f13b468b7"
+  version "v1.5.2-testing"
+  revision 1
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
   depends_on "pkg-config"
   depends_on "curl"
   depends_on "coreutils"
-  
-  bottle do
-    root_url "https://homebrew.bintray.com/bottles-core"
-    cellar :any
-    sha256 "1a5341c3d05288676cda1b9bcd5199d12cb033bb3142e40fed7712f01f28eadd" => :mojave
-  end
   
   option "with-clang", "Use the *clang* compiler instead of the default gcc"
 
