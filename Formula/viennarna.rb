@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   #sha256 "9913fc04a6f2ab380bd492301f9c5a07cfe1b6c9ca437261de03691c3d3d6837"
   version "2.4.11"
-  revision 19
+  revision 20
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -14,8 +14,10 @@ class Viennarna < Formula
   bottle do
     root_url "https://homebrew.bintray.com/bottles-core"
     cellar :any
-    sha256 "4a09dda7db4153746874f81519fbd00769ef82c830a097466389d2ddb6834622" => :mojave
+    rebuild 1
+    sha256 "0e8ac9750f59ecde965e0c6f19735a7da4e755626f71139505f8906c5ec4a3cc" => :mojave
   end
+
   
   def install
     system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
