@@ -2,9 +2,9 @@ class Viennarna < Formula
   desc "ViennaRNA and RNAlib: Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/RNA/"
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
-  sha256 "9913fc04a6f2ab380bd492301f9c5a07cfe1b6c9ca437261de03691c3d3d6837"
+  sha256 "bc88998313593dff5e170b91c48f3d9312c0d7a86867049e49dbbe1b1f68c975"
   version "2.4.11"
-  revision 22
+  revision 23
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -20,9 +20,9 @@ class Viennarna < Formula
 
   
   def install
-    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
-    system "tar", "xvzf", "ViennaRNA-2.4.11.tar.gz"
-    Dir.chdir("ViennaRNA-2.4.11")
+    #system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
+    #system "tar", "xvzf", "ViennaRNA-2.4.11.tar.gz"
+    #Dir.chdir("ViennaRNA-2.4.11")
     system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
