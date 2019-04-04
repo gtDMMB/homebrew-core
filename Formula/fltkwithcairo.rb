@@ -1,9 +1,9 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo support enabled"
   homepage "http://www.fltk.org/"
-  url "http://fltk.org/pub/fltk/snapshots/fltk-1.4.x-r13107.tar.bz2"
-  version "1.4.x-r13107"
-  sha256 "5193a66ae1f07d477d7c26f78f3b6389594e870fd3f71dbc572ed8fcf776daf6"
+  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20190329-7a3af40e.tar.gz"
+  version "1.4.x-20190329-7a3af40e"
+  sha256 "b55dbf3268c3daa2dbaed60b44e14960bb5ae0ef7155b5d05b348edc35ae08cd"
   revision 2
 
   depends_on "wget"
@@ -12,10 +12,10 @@ class Fltkwithcairo < Formula
   depends_on "jpeg"
   depends_on "libpng"
 
-  bottle do
-    root_url "https://homebrew.bintray.com/bottles-core"
-    sha256 "4b379d7121c831032bf837b4d640694daff77186e01a41483a26c672b15ecc22" => :mojave
-  end
+  #bottle do
+  #  root_url "https://homebrew.bintray.com/bottles-core"
+  #  sha256 "4b379d7121c831032bf837b4d640694daff77186e01a41483a26c672b15ecc22" => :mojave
+  #end
   
   def install
     archcmd = "uname -m"
@@ -37,8 +37,8 @@ class Fltkwithcairo < Formula
     system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV6.patch"
     system "make", "clean"
     system "./configure", *config_args
-    system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
-    system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
+  #  system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
+  #  system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
     system "make", "install"
   end
 
