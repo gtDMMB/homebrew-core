@@ -1,9 +1,9 @@
 class Rnastructviz < Formula
   desc "CT file viewer and graphical RNA structure comparison tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.5.8-testing.tar.gz"
-  sha256 "4b086a06686b60fd6216a5dc2ad05c68116c692e93ca1ca0972a3d20f99d7963"
-  version "v1.5.8-testing"
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.5.9-testing.tar.gz"
+  sha256 "087ba7a49a7a7c14058d56194422f35f3abc037ea86184c601342da20bb44f5a"
+  version "v1.5.9-testing"
   revision 1
 
   depends_on "gtDMMB/core/fltkwithcairo"
