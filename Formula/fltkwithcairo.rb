@@ -4,7 +4,7 @@ class Fltkwithcairo < Formula
   url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20190329-7a3af40e.tar.gz"
   version "1.4.x-20190329-7a3af40e"
   sha256 "b55dbf3268c3daa2dbaed60b44e14960bb5ae0ef7155b5d05b348edc35ae08cd"
-  revision 3
+  revision 4
 
   depends_on "wget"
   depends_on "libffi"
@@ -34,12 +34,12 @@ class Fltkwithcairo < Formula
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
       "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
     ]
-    system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
-    system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV6.patch"
+    #system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
+    #system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV6.patch"
     system "make", "clean"
     system "./configure", *config_args
-  #  system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
-  #  system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
+    #system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
+    #system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
     system "make", "install"
   end
 
