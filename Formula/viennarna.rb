@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.11.tar.gz"
   #sha256 "bc88998313593dff5e170b91c48f3d9312c0d7a86867049e49dbbe1b1f68c975"
   version "2.4.11"
-  revision 26
+  revision 27
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -33,7 +33,7 @@ class Viennarna < Formula
       "--prefix=#{prefix}",
       "CC=/usr/bin/gcc", 
       "CXX=/usr/bin/g++",
-      "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
+      "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native" # -m64"
     system "make"
     ENV.deparallelize
     system "make", "install"
