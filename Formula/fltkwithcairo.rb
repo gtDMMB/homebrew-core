@@ -1,10 +1,10 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo support enabled"
   homepage "http://www.fltk.org/"
-  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20190329-7a3af40e.tar.gz"
-  version "1.4.x-20190329-7a3af40e"
-  sha256 "b55dbf3268c3daa2dbaed60b44e14960bb5ae0ef7155b5d05b348edc35ae08cd"
-  revision 5
+  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20190510-874ccfe6.tar.gz"
+  version "fltk-1.4.x-20190510-874ccfe6"
+  sha256 "cfade184a2d5841ba4947c33d45f0e473388a6006c3466b10daa4d61387b130b"
+  revision 6
 
   depends_on "wget"
   depends_on "libffi"
