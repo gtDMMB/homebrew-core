@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.6.7-testing.tar.gz"
   sha256 "64d131ddd476a66bf06c438e7d2dc860a6b12f6db958c41ba93988e03ac7c7a0"
   version "v1.6.7-testing"
-  revision 2
+  revision 3
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -12,17 +12,19 @@ class Rnastructviz < Formula
   depends_on "curl"
   depends_on "coreutils"
   
-  option "with-clang", "Use the *clang* compiler instead of the default gcc"
+  #option "with-clang", "Use the *clang* compiler instead of the default gcc"
 
   def install
-    makeExportPrefix = ""
-    makeExportPrefix << "STRUCTVIZ_COMPILER=clang++" if build.with? "clang"
-    system "make", "clean"
-    if makeExportPrefix != ""
-      system makeExportPrefix, "make"
-    elsif
-      system "make", "install", "INSTALL_PREFIX=#{prefix}"
-    end
+    #makeExportPrefix = ""
+    #makeExportPrefix << "STRUCTVIZ_COMPILER=clang++" if build.with? "clang"
+    #system "make", "clean"
+    #if makeExportPrefix != ""
+    #  system makeExportPrefix, "make"
+    #elsif
+    #  system "make", "install", "INSTALL_PREFIX=#{prefix}"
+    #end
+    system "make"
+    prefix.install Dir["sample_structures"]
   end
 
   test do
