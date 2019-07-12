@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.6.7-testing.tar.gz"
   sha256 "64d131ddd476a66bf06c438e7d2dc860a6b12f6db958c41ba93988e03ac7c7a0"
   version "v1.6.7-testing"
-  revision 3
+  revision 4
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -24,6 +24,7 @@ class Rnastructviz < Formula
     #  system "make", "install", "INSTALL_PREFIX=#{prefix}"
     #end
     system "make"
+    bin.install "src/RNAStructViz"
     prefix.install Dir["sample_structures"]
   end
 
