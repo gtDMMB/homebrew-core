@@ -1,21 +1,17 @@
 class Fltkwithcairo < Formula
-  desc "Latest non-stable branch of FLTK *with* Cairo support enabled"
+  desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
   homepage "http://www.fltk.org/"
-  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20190510-874ccfe6.tar.gz"
-  version "fltk-1.4.x-20190510-874ccfe6"
-  sha256 "cfade184a2d5841ba4947c33d45f0e473388a6006c3466b10daa4d61387b130b"
-  revision 6
+  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20191025-4f8e692f.tar.gz"
+  version "fltk-1.4.x-20191025-4f8e692f"
+  sha256 "718a6469326c4b826c21434e3fe52b3aa911f57a93e8a935b0827c828a71e53b"
+  revision 1
 
   depends_on "wget"
   depends_on "libffi"
   depends_on "cairo"
   depends_on "jpeg"
   depends_on "libpng"
-
-  #bottle do
-  #  root_url "https://homebrew.bintray.com/bottles-core"
-  #  sha256 "4b379d7121c831032bf837b4d640694daff77186e01a41483a26c672b15ecc22" => :mojave
-  #end
+  depends_on "gcc@8"
   
   def install
     archcmd = "uname -m"
@@ -30,16 +26,14 @@ class Fltkwithcairo < Formula
       "--prefix=#{prefix}",
       "--enable-cairo",
       "--enable-threads",
-      "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
-      "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
+      #"CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
+      #"CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
+      "CC=gcc-8" + compiler_flags + " -arch " + sysarch + include_flags,
+      "CXX=g++-8" + compiler_flags + " -arch " + sysarch + include_flags,
       "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native" # -m64"
     ]
-    #system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV4.patch"
-    #system "wget", "https://raw.githubusercontent.com/gtDMMB/homebrew-core/master/LocalPatches/cairomojaveV6.patch"
     system "make", "clean"
     system "./configure", *config_args
-    #system "patch", "-p0", "src/Fl_cocoa.mm", "cairomojaveV4.patch"
-    #system "patch", "-p0", "cairo/Fl_Cairo.cxx", "cairomojaveV6.patch"
     system "make", "install"
   end
 
