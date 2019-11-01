@@ -1,10 +1,10 @@
 class Rnastructviz < Formula
   desc "Graphical RNA secondary structure comparison tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.7.4-testing.tar.gz"
-  sha256 "4cdbec702d342bb0f5bc699d5d326c2da4ad25bd73403198b2070274c3f50872"
-  version "v1.7.4-testing"
-  revision 2
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v1.7.6-testing.tar.gz"
+  sha256 "15c96371fece9e478dedf5ca630cb0bc05fa12c0dc7db47789e81b0713a9bff8"
+  version "v1.7.6-testing"
+  revision 1
 
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -14,7 +14,8 @@ class Rnastructviz < Formula
   depends_on "openssl"
 
   def install
-    system "make"
+    #system "make"
+    system "CXX=g++-8 make"
     bin.install "src/RNAStructViz"
     prefix.install Dir["sample_structures"]
   end
