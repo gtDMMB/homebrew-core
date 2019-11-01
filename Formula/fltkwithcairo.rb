@@ -11,7 +11,7 @@ class Fltkwithcairo < Formula
   depends_on "cairo"
   depends_on "jpeg"
   depends_on "libpng"
-  depends_on "llvm"
+  depends_on "gcc@8"
   
   def install
     archcmd = "uname -m"
@@ -26,10 +26,10 @@ class Fltkwithcairo < Formula
       "--prefix=#{prefix}",
       "--enable-cairo",
       "--enable-threads",
-      "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
-      "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
-      #"CC=gcc-8" + compiler_flags + " -arch " + sysarch + include_flags,
-      #"CXX=g++-8" + compiler_flags + " -arch " + sysarch + include_flags,
+      #"CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
+      #"CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
+      "CC=gcc-8" + compiler_flags + " -arch " + sysarch + include_flags,
+      "CXX=g++-8" + compiler_flags + " -arch " + sysarch + include_flags,
       "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native" # -m64"
     ]
     system "make", "clean"
