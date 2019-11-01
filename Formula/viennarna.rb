@@ -15,7 +15,7 @@ class Viennarna < Formula
   def install
     system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
     system "tar", "xvzf", "ViennaRNA-2.4.14.tar.gz"
-    Dir.chdir("ViennaRNA-2.4.11")
+    Dir.chdir("ViennaRNA-2.4.14")
     system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
