@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v1.7.8-testing.tar.gz"
   sha256 "1eae84f6fbc1b6aa7a26f9d5a0e7a1cf5d16b4e20156dd3e18ea195358ba0412"
   version "v1.7.8-testing"
-  revision 5
+  revision 6
   
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
@@ -12,7 +12,7 @@ class Rnastructviz < Formula
   depends_on "curl"
   depends_on "coreutils"
   depends_on "openssl"
-  depends_on "llvm@8"
+  depends_on "boost"
 
   def install
     system "make"
