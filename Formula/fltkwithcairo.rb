@@ -4,7 +4,7 @@ class Fltkwithcairo < Formula
   url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20191115-ee9ada96.tar.gz"
   version "fltk-1.4.x-20191115-ee9ada96"
   sha256 "cfff34dd75a17fb41c49d06724e74ef6bdf83b01556f430037b9314f2910b2fa"
-  revision 1
+  revision 2
 
   depends_on "wget"
   depends_on "libffi"
@@ -15,7 +15,7 @@ class Fltkwithcairo < Formula
   def install
     archcmd = "uname -m"
     sysarch = `#{archcmd}`.tr("\n", "")
-    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__ -std=c++11"
+    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__"
     swversion = `#{"sw_vers"}`.tr("\n", "");
     if swversion[3..4].ord >= 14
       compiler_flags += " -DROTATE";
