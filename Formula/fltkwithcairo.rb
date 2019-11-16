@@ -15,7 +15,7 @@ class Fltkwithcairo < Formula
   def install
     archcmd = "uname -m"
     sysarch = `#{archcmd}`.tr("\n", "")
-    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__"
+    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__ -D__APPLE_QUARTZ__"
     swversion = `#{"sw_vers"}`.tr("\n", "");
     if swversion[3..4].ord >= 14
       compiler_flags += " -DROTATE";
