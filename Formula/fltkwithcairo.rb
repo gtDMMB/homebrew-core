@@ -1,10 +1,10 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
-  homepage "http://www.fltk.org/"
-  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20191025-4f8e692f.tar.gz"
-  version "fltk-1.4.x-20191025-4f8e692f"
-  sha256 "718a6469326c4b826c21434e3fe52b3aa911f57a93e8a935b0827c828a71e53b"
-  revision 4
+  homepage "https://www.fltk.org/software.php?VERSION=1.4.x"
+  url "https://www.fltk.org/pub/fltk/snapshots/fltk-1.4.x-20191115-ee9ada96.tar.gz"
+  version "fltk-1.4.x-20191115-ee9ada96"
+  sha256 "cfff34dd75a17fb41c49d06724e74ef6bdf83b01556f430037b9314f2910b2fa"
+  revision 1
 
   depends_on "wget"
   depends_on "libffi"
@@ -15,7 +15,7 @@ class Fltkwithcairo < Formula
   def install
     archcmd = "uname -m"
     sysarch = `#{archcmd}`.tr("\n", "")
-    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__"
+    compiler_flags = " -g -DBUILD_SHARED_LIBS -D__APPLE__ -std=c++11"
     swversion = `#{"sw_vers"}`.tr("\n", "");
     if swversion[3..4].ord >= 14
       compiler_flags += " -DROTATE";
@@ -24,11 +24,12 @@ class Fltkwithcairo < Formula
     config_args = [
       "--prefix=#{prefix}",
       "--enable-cairo",
+      "--enable-cairoext",
+      #"--disable-x11",
+      "--enable-debug",
       "--enable-threads",
       "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
-      #"CC=gcc-8" + compiler_flags + " -arch " + sysarch + include_flags,
-      #"CXX=g++-8" + compiler_flags + " -arch " + sysarch + include_flags,
       "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native" # -m64"
     ]
     system "make", "clean"
