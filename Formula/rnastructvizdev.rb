@@ -16,6 +16,7 @@ class Rstructvizdev < Formula
   depends_on "curl"
   depends_on "coreutils"
   depends_on "grep"
+  depends_on "gnu-sed"
   depends_on "openssl"
   depends_on "boost" => ["with-c++17"]
   
