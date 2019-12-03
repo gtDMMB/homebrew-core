@@ -1,12 +1,11 @@
 class Rnastructviz < Formula
-  name "RNAStructViz"
   desc "Graphical RNA secondary structure comparison multi-tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.1-testing.tar.gz"
   caveats "See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions ... "
   sha256 "7efd9423fddd911506415c6a458f5437fb1e14f04f7156c68f018acd4605df88"
   version "v2.0.1-testing"
-  revision 5
+  revision 6
   
   bottle :unneeded
   
