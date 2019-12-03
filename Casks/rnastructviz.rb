@@ -1,12 +1,10 @@
 cask 'rnastructviz' do
   name "RNAStructViz"
-  desc "Graphical RNA secondary structure comparison multi-tool (cask formula)"
   version "v2.0.1-testing"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.1-testing.tar.gz"
   sha256 "7efd9423fddd911506415c6a458f5437fb1e14f04f7156c68f018acd4605df88"
   caveats "See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions ... "
-  revision 1
   
   depends_on "gtDMMB/core/rnastructviz"
   
