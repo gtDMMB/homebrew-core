@@ -6,7 +6,7 @@ class Rnastructviz < Formula
   caveats "See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions ... "
   sha256 "7efd9423fddd911506415c6a458f5437fb1e14f04f7156c68f018acd4605df88"
   version "v2.0.1-testing"
-  revision 4
+  revision 5
   
   bottle :unneeded
   
@@ -29,8 +29,6 @@ class Rnastructviz < Formula
     system "mv", "macos-application/RNAStructViz", "macos-application/RNAStructViz.app"
     prefix.install "macos-application/RNAStructViz.app"
   end
-  
-  app "macos-application/RNAStructViz.app"
 
   test do
     system "false"
