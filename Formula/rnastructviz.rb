@@ -2,10 +2,9 @@ class Rnastructviz < Formula
   desc "Graphical RNA secondary structure comparison multi-tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.1-testing.tar.gz"
-  caveats "See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions ... "
   sha256 "7efd9423fddd911506415c6a458f5437fb1e14f04f7156c68f018acd4605df88"
   version "v2.0.1-testing"
-  revision 6
+  revision 7
   
   bottle :unneeded
   
@@ -27,6 +26,12 @@ class Rnastructviz < Formula
     system "cp", "src/RNAStructViz", "macos-application/RNAStructViz/Contents/MacOS/"
     system "mv", "macos-application/RNAStructViz", "macos-application/RNAStructViz.app"
     prefix.install "macos-application/RNAStructViz.app"
+  end
+  
+  def caveats; <<~EOS
+    See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions. 
+    If your brew environment is configured correctly. you can now run RNAStructViz at your terminal.
+  EOS
   end
 
   test do
