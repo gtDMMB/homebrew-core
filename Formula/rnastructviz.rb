@@ -1,9 +1,9 @@
 class Rnastructviz < Formula
   desc "Graphical RNA secondary structure comparison multi-tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.4-testing.tar.gz"
-  sha256 "76534409251883b45855b13a860bc8daa32e5a2dba3849249c6e21cb19a16968"
-  version "v2.0.4-testing"
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.5-testing.tar.gz"
+  sha256 "4f0339676502652ef75d173653c0060e78ae1297970fd6f7c77803052c82935c"
+  version "v2.0.5-testing"
   revision 1
   
   bottle :unneeded
