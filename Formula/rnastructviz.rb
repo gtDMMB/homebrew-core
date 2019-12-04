@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.2-testing.tar.gz"
   sha256 "cb6552375ce1b0cc1d2065fc30bbd48d14c69aae3afe8d18df85b5514e65d5f6"
   version "v2.0.2-testing"
-  revision 1
+  revision 2
   
   bottle :unneeded
   
@@ -20,11 +20,11 @@ class Rnastructviz < Formula
 
   def install
     system "make"
-    bin.install "src/RNAStructViz"
-    prefix.install Dir["sample-structures"]
     system "mv", "macos-application/RNAStructViz.app", "macos-application/RNAStructViz"
     system "cp", "src/RNAStructViz", "macos-application/RNAStructViz/Contents/MacOS/"
     system "cp", "-R", "macos-application/RNAStructViz", "macos-application/RNAStructViz.app"
+    bin.install "src/RNAStructViz"
+    prefix.install Dir["sample-structures"]
     prefix.install "macos-application/RNAStructViz.app"
   end
   
