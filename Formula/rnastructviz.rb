@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.1.9-testing.tar.gz"
   sha256 "b7272a7b89f03d8a818770cf9f3b06fad4b8ad2d6d4712c0fa00a97b214f652c"
   version "v2.1.9-testing"
-  revision 1
+  revision 2
   
   bottle :unneeded
   
@@ -30,7 +30,7 @@ class Rnastructviz < Formula
   
   def caveats; <<~EOS
     See RNAStructViz WIKI docs https://github.com/gtDMMB/RNAStructViz/wiki/FirstRunInstructions. 
-    If your brew environment is configured correctly. you can now run RNAStructViz at your terminal.
+    If your brew environment is configured correctly, you can now run `RNAStructViz` at your terminal.
   EOS
   end
 
