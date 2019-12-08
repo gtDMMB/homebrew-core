@@ -1,10 +1,10 @@
 class Rnastructviz < Formula
   desc "Graphical RNA secondary structure comparison multi-tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/v2.0.9-testing.tar.gz"
-  sha256 "4fcd99bcc2b91b646f1cad843e7cd5a467f0b836186c77c4219b549994987d5a"
-  version "v2.0.9-testing"
-  revision 3
+  url "https://github.com/gtDMMB/RNAStructViz/archive/v2.1.0-testing.tar.gz"
+  sha256 "32270e339d73999eb21c14d138deb1231046758e34bedb3d4a612aca6ba4cf63"
+  version "v2.1.0-testing"
+  revision 1
   
   bottle :unneeded
   
@@ -19,7 +19,7 @@ class Rnastructviz < Formula
   depends_on "boost"
 
   def install
-    system "make", "clean"
+    #system "make", "clean"
     system "make"
     system "mv", "macos-application/RNAStructViz.app", "macos-application/RNAStructViz"
     system "cp", "src/RNAStructViz", "macos-application/RNAStructViz/Contents/MacOS/"
