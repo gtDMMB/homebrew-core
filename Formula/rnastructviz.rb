@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.3.1-testing.tar.gz"
   sha256 "498eee20591bcbd6b213b81e0e2ef3aefadf919dd49e8ffc5ed0f6179cd0a3b5"
   version "v2.3.1-testing"
-  revision 1
+  revision 2
   
   bottle :unneeded
   
@@ -15,7 +15,7 @@ class Rnastructviz < Formula
   depends_on "coreutils"
   depends_on "grep"
   depends_on "gnu-sed"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "boost"
 
   def install
