@@ -1,9 +1,9 @@
-class Python < Formula
+class PythonDbgAT37 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz"
   sha256 "55a2cce72049f0794e9a11a84862e9039af9183603b78bc60d89539f82cf533f"
-  revision 3
+  revision 4
   head "https://github.com/python/cpython.git"
 
   # setuptools remembers the build flags python is built with and uses them to
