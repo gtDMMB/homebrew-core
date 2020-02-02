@@ -3,7 +3,7 @@ class PythonDbgAT37 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz"
   sha256 "55a2cce72049f0794e9a11a84862e9039af9183603b78bc60d89539f82cf533f"
-  revision 8
+  revision 9
   head "https://github.com/python/cpython.git"
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -54,6 +54,7 @@ class PythonDbgAT37 < Formula
 
     args = %W[
       --with-pydebug
+      --with-assertions
       --prefix=#{prefix}
       --enable-ipv6
       --datarootdir=#{share}
@@ -64,7 +65,6 @@ class PythonDbgAT37 < Formula
       --with-dtrace
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       CFLAGS=\"-DPy_DEBUG\"
-      EXTRA_CFLAGS=\"-DPy_REF_DEBUG\"
     ]
 
     #args << "--without-gcc" if ENV.compiler == :clang
@@ -111,7 +111,7 @@ class PythonDbgAT37 < Formula
     args << "CPPFLAGS=#{cppflags.join(" ")}" unless cppflags.empty?
 
     system "./configure", *args
-    system "make"
+    system "make EXTRA_CFLAGS=\"-DPy_REF_DEBUG -DPyErr_Occurred -DPYMALLOC_DEBUG\""
 
     ENV.deparallelize do
       # Tell Python not to install into /Applications (default for framework builds)
