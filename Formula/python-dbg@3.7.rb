@@ -3,7 +3,7 @@ class PythonDbgAT37 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz"
   sha256 "55a2cce72049f0794e9a11a84862e9039af9183603b78bc60d89539f82cf533f"
-  revision 7
+  revision 8
   head "https://github.com/python/cpython.git"
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -47,6 +47,7 @@ class PythonDbgAT37 < Formula
     # and not into some other Python the user has installed.
     ENV["PYTHONHOME"] = nil
     ENV["PYTHONPATH"] = nil
+    ENV.delete("PYTHONPATH") if build.with? "python3"
 
     xy = (buildpath/"configure.ac").read.slice(/PYTHON_VERSION, (3\.\d)/, 1)
     lib_cellar = prefix/"Frameworks/Python.framework/Versions/#{xy}/lib/python#{xy}"
