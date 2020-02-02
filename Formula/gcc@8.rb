@@ -4,7 +4,7 @@ class GccAT8 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-8.3.0/gcc-8.3.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-8.3.0/gcc-8.3.0.tar.xz"
   sha256 "64baadfe6cc0f4947a84cb12d7f0dfaf45bb58b7e92461639596c21e02d97d2c"
-  revision 4
+  revision 5
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
@@ -46,7 +46,7 @@ class GccAT8 < Formula
     #  - Ada, which requires a pre-existing GCC Ada compiler to bootstrap
     #  - Go, currently not supported on macOS
     #  - BRIG
-    languages = %w[asm c c++ objc obj-c++ fortran]
+    languages = %w[c c++ objc obj-c++ fortran]
 
     osmajor = `uname -r`.split(".").first
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
