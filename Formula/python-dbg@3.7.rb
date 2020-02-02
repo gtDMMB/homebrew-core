@@ -3,7 +3,7 @@ class PythonDbgAT37 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz"
   sha256 "55a2cce72049f0794e9a11a84862e9039af9183603b78bc60d89539f82cf533f"
-  revision 4
+  revision 5
   head "https://github.com/python/cpython.git"
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -64,7 +64,7 @@ class PythonDbgAT37 < Formula
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
     ]
 
-    args << "--without-gcc" if ENV.compiler == :clang
+    #args << "--without-gcc" if ENV.compiler == :clang
 
     cflags   = []
     ldflags  = []
@@ -107,7 +107,7 @@ class PythonDbgAT37 < Formula
     args << "LDFLAGS=#{ldflags.join(" ")}" unless ldflags.empty?
     args << "CPPFLAGS=#{cppflags.join(" ")}" unless cppflags.empty?
 
-    system "CFLAGS=\"-DPy_DEBUG -DPy_TRACE_REFS\" EXTRA_CFLAGS=\"-DPy_REF_DEBUG\" ./configure", *args
+    system "./configure CFLAGS=\"-DPy_DEBUG -DPy_TRACE_REFS\" EXTRA_CFLAGS=\"-DPy_REF_DEBUG\"", *args
     system "make"
 
     ENV.deparallelize do
