@@ -3,8 +3,8 @@ class Rnastructviz < Formula
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
   url "https://github.com/gtDMMB/RNAStructViz/archive/v2.3.9-testing.tar.gz"
   sha256 "9a54efdd6180be0d75f95fbdd133e730a6cd2876fab20e18149d8c62535961ce"
-  version "v2.3.8-testing"
-  revision 1
+  version "v2.3.9-testing"
+  revision 2
   
   bottle :unneeded
   
