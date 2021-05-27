@@ -1,10 +1,10 @@
 class Viennarna < Formula
   desc "ViennaRNA and RNAlib: Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/RNA/"
-  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/ViennaRNA-2.4.14-smaller.tar.gz"
-  sha256 "b8a5912193d0e72699db1dc57ab4b5697c0543d61df5bc1f85cf91ec047d1c2d"
+  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
+  #sha256 "b8a5912193d0e72699db1dc57ab4b5697c0543d61df5bc1f85cf91ec047d1c2d"
   version "2.4.14"
-  revision 14
+  revision 15
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -20,9 +20,8 @@ class Viennarna < Formula
     if sysarch == "x86_64"
       cflags = cflags_x86_64
     end
-    system "wget", "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/ViennaRNA-2.4.14-smaller.tar.gz"
-    system "tar", "xvzf", "ViennaRNA-2.4.14-smaller.tar.gz"
-    
+    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
+    system "tar", "xvzf", "ViennaRNA-2.4.14.tar.gz"
     Dir.chdir("ViennaRNA-2.4.14")
     system "./configure", "-v",
       "--disable-debug",
@@ -31,8 +30,8 @@ class Viennarna < Formula
       "--without-python3", 
       "--without-perl",
       "--disable-openmp",
-      "--without-doc",
-      "--without-tutorial",
+      #"--without-doc",
+      #"--without-tutorial",
       "--prefix=#{prefix}",
       "CC=/usr/bin/gcc", 
       "CXX=/usr/bin/g++",
