@@ -4,7 +4,7 @@ class Fltkwithcairo < Formula
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20210514-cbee4880.tar.gz"
   version "fltk-1.4.x-20210514-cbee4880"
   #sha256 "158798350391552af635c73b99e085367d1a8f58525503bfab94134583e8e15c"
-  revision 2
+  revision 3
 
   depends_on "wget"
   depends_on "libffi"
@@ -28,7 +28,8 @@ class Fltkwithcairo < Formula
       "--enable-threads",
       "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
-      "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
+      "CFLAGS=-march=native -Wa,-march=native -m64"
+      #"CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
     ]
     system "make", "clean"
     system "./configure", *config_args
