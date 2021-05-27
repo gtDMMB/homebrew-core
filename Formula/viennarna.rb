@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/ViennaRNA-2.4.14-smaller.tar.gz"
   sha256 "5b4aead3de5bec4804d42d814101aeec846d260dbdb782cfe4e1cc038fce0c54"
   version "2.4.14"
-  revision 9
+  revision 10
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -30,6 +30,8 @@ class Viennarna < Formula
       "--without-python3", 
       "--without-perl",
       "--disable-openmp",
+      "--without-doc",
+      "--without-tutorial",
       "--prefix=#{prefix}",
       "CC=/usr/bin/gcc", 
       "CXX=/usr/bin/g++",
