@@ -1,10 +1,12 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
   homepage "https://www.fltk.org/software.php?VERSION=1.4.x"
-  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20210514-cbee4880.tar.gz"
-  version "fltk-1.4.x-20210514-cbee4880"
-  #sha256 "158798350391552af635c73b99e085367d1a8f58525503bfab94134583e8e15c"
-  revision 7
+  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20200124-59295b52.tar.bz2"
+  #url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20210514-cbee4880.tar.gz"
+  #version "fltk-1.4.x-20210514-cbee4880"
+  version "fltk-1.4.x-20200124-59295b52"
+  sha256 "363997fa7b7e30c962530c3b7e1f0db4fa067996054326a2a6e02d557482bd42"
+  revision 8
 
   depends_on "wget"
   depends_on "libffi"
