@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/ViennaRNA-2.4.14-smaller.tar.gz"
   sha256 "b8a5912193d0e72699db1dc57ab4b5697c0543d61df5bc1f85cf91ec047d1c2d"
   version "2.4.14"
-  revision 20
+  revision 21
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -20,11 +20,11 @@ class Viennarna < Formula
     if sysarch == "x86_64"
       cflags = cflags_x86_64
     end
-    gsl_pkgconfig = "pkg-config gsl --cflags"
+    gsl_pkgconfig = "pkg-config gsl --cflags --libs"
     gsl_includes = `#{gsl_pkgconfig}`.tr("\n", "") + " "
-    mpfr_pkgconfig = "pkg-config mpfr --cflags"
+    mpfr_pkgconfig = "pkg-config mpfr --cflags --libs"
     mpfr_includes = `#{mpfr_pkgconfig}`.tr("\n", "") + " "
-    gmp_pkgconfig = "pkg-config gmp --cflags"
+    gmp_pkgconfig = "pkg-config gmp --cflags --libs"
     gmp_includes = `#{gmp_pkgconfig}`.tr("\n", "") + " "
     system "wget", "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/ViennaRNA-2.4.14-smaller.tar.gz"
     system "tar", "xvzf", "ViennaRNA-2.4.14-smaller.tar.gz"
