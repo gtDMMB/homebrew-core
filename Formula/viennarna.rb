@@ -2,9 +2,8 @@ class Viennarna < Formula
   desc "ViennaRNA and RNAlib: Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/RNA/"
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-  sha256 "b8a5912193d0e72699db1dc57ab4b5697c0543d61df5bc1f85cf91ec047d1c2d"
   version "2.4.14"
-  revision 23
+  revision 24
 
   depends_on "pkg-config"
   depends_on "mpfr"
