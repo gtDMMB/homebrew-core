@@ -2,11 +2,9 @@ class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
   homepage "https://www.fltk.org/software.php?VERSION=1.4.x"
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20200124-59295b52.tar.bz2"
-  #url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20210514-cbee4880.tar.gz"
-  #version "fltk-1.4.x-20210514-cbee4880"
   version "fltk-1.4.x-20200124-59295b52"
   sha256 "363997fa7b7e30c962530c3b7e1f0db4fa067996054326a2a6e02d557482bd42"
-  revision 8
+  revision 9
 
   depends_on "wget"
   depends_on "libffi"
@@ -37,8 +35,6 @@ class Fltkwithcairo < Formula
       "CC=clang" + compiler_flags + " -arch " + sysarch + include_flags,
       "CXX=clang++" + compiler_flags + " -arch " + sysarch + include_flags,
       "CFLAGS=" + cflags
-      #"CFLAGS=-mprefer-vector-width=256 -march=native -Wa,-march=native -m64"
-      #"CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
     ]
     system "make", "clean"
     system "./configure", *config_args
