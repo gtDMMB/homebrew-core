@@ -4,7 +4,7 @@ class Viennarna < Formula
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
   #sha256 "b8a5912193d0e72699db1dc57ab4b5697c0543d61df5bc1f85cf91ec047d1c2d"
   version "2.4.14"
-  revision 15
+  revision 17
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -12,14 +12,14 @@ class Viennarna < Formula
   depends_on "gsl"
   
   def install
-    archcmd = "uname -m"
-    sysarch = `#{archcmd}`.tr("\n", "")
-    cflags_x86_64 = "-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
-    cflags_other = "-mprefer-vector-width=256 -march=native -Wa,-march=native -m64"
-    cflags = cflags_other
-    if sysarch == "x86_64"
-      cflags = cflags_x86_64
-    end
+    #archcmd = "uname -m"
+    #sysarch = `#{archcmd}`.tr("\n", "")
+    #cflags_x86_64 = "-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
+    #cflags_other = "-mprefer-vector-width=256 -march=native -Wa,-march=native -m64"
+    #cflags = cflags_other
+    #if sysarch == "x86_64"
+    #  cflags = cflags_x86_64
+    #end
     system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
     system "tar", "xvzf", "ViennaRNA-2.4.14.tar.gz"
     Dir.chdir("ViennaRNA-2.4.14")
@@ -35,7 +35,8 @@ class Viennarna < Formula
       "--prefix=#{prefix}",
       "CC=/usr/bin/gcc", 
       "CXX=/usr/bin/g++",
-      "CFLAGS=" + cflags
+      "CFLAGS=-march=skylake-avx512 -Wa,-march=skylake-avx512 -march=native -m64"
+      #"CFLAGS=" + cflags
     system "make"
     ENV.deparallelize
     system "make", "install"
