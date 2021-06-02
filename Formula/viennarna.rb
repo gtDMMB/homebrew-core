@@ -3,7 +3,7 @@ class Viennarna < Formula
   homepage "https://www.tbi.univie.ac.at/RNA/"
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.18.tar.gz"
   version "2.4.18"
-  revision 25
+  revision 26
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -27,7 +27,7 @@ class Viennarna < Formula
     gmp_includes = `#{gmp_pkgconfig}`.tr("\n", "") + " "
     system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.18.tar.gz"
     system "tar", "xvzf", "ViennaRNA-2.4.18.tar.gz"
-    Dir.chdir("ViennaRNA-2.4.14")
+    Dir.chdir("ViennaRNA-2.4.18")
     system "./configure", "-v",
       "--disable-debug",
       "--disable-dependency-tracking",
