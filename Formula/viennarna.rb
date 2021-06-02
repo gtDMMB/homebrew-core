@@ -3,7 +3,7 @@ class Viennarna < Formula
   homepage "https://www.tbi.univie.ac.at/RNA/"
   url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.18.tar.gz"
   version "2.4.18"
-  revision 1
+  revision 25
 
   depends_on "pkg-config"
   depends_on "mpfr"
