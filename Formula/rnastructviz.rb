@@ -4,7 +4,7 @@ class Rnastructviz < Formula
   url "https://github.com/gtDMMB/RNAStructViz/archive/refs/tags/v2.4.14-v1-stable.tar.gz"
   sha256 "5f516a86c5526d1a6200afd7ea295cc90a18d775e9a9b8f0b4c15b83963ee697"
   version "v2.4.14-stable"
-  revision 5
+  revision 6
   
   bottle :unneeded
   
@@ -19,7 +19,7 @@ class Rnastructviz < Formula
   depends_on "boost"
 
   def install
-    system "CXXFLAGS=\"\" LDFLAGS=\"\" make"
+    system "CFLAGS=\"\" CXXFLAGS=\"\" LDFLAGS=\"\" make"
     system "mv", "macos-application/RNAStructViz.app", "macos-application/RNAStructViz"
     system "cp", "src/RNAStructViz", "macos-application/RNAStructViz/Contents/MacOS/"
     system "cp", "-R", "macos-application/RNAStructViz", "macos-application/RNAStructViz.app"
