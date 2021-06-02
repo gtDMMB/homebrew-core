@@ -1,9 +1,9 @@
 class Viennarna < Formula
   desc "ViennaRNA and RNAlib: Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/RNA/"
-  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-  version "2.4.14"
-  revision 24
+  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.18.tar.gz"
+  version "2.4.18"
+  revision 1
 
   depends_on "pkg-config"
   depends_on "mpfr"
@@ -25,8 +25,8 @@ class Viennarna < Formula
     mpfr_includes = `#{mpfr_pkgconfig}`.tr("\n", "") + " "
     gmp_pkgconfig = "pkg-config gmp --cflags --libs"
     gmp_includes = `#{gmp_pkgconfig}`.tr("\n", "") + " "
-    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-    system "tar", "xvzf", "ViennaRNA-2.4.14.tar.gz"
+    system "wget", "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.18.tar.gz"
+    system "tar", "xvzf", "ViennaRNA-2.4.18.tar.gz"
     Dir.chdir("ViennaRNA-2.4.14")
     system "./configure", "-v",
       "--disable-debug",
