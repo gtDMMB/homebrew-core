@@ -1,10 +1,10 @@
 class Rnastructviz < Formula
   desc "Graphical RNA secondary structure comparison multi-tool"
   homepage "https://github.com/gtDMMB/RNAStructViz/wiki"
-  url "https://github.com/gtDMMB/RNAStructViz/archive/refs/tags/v2.4.14-v2-stable.tar.gz"
-  sha256 "f202cf22de32fcd97e005b580789a8380ab900cdeda22a59433e554554da60c3"
-  version "v2.4.14-stable"
-  revision 7
+  url "https://github.com/gtDMMB/RNAStructViz/archive/refs/tags/v2.4.15-stable.tar.gz"
+  sha256 "dfb0fa9bffd2aab781234bd54da0e7148e77a1f1ed018a628d68462574e30b0e"
+  version "v2.4.15-stable"
+  revision 8
   
   #bottle :unneeded
   
@@ -18,8 +18,21 @@ class Rnastructviz < Formula
   depends_on "openssl@1.1"
   depends_on "boost"
 
+  # To maintainers: If this brew package becomes deprecated, replace the @12 with @MORE_RECENT_VERSION
+  #                 throughout this formula.
+  depends_on "llvm@12"
+  depends_on :macos
+
   def install
-    system "CFLAGS=\"\" CXXFLAGS=\"\" LDFLAGS=\"\" make"
+    if MacOS.version >= :catalina
+      llvm_path = "/usr/local/opt/llvm@12/"
+      rsv_env = "STRUCTVIZ_COMPILER=\"" + llvm_path + "bin/clang++ -nostdinc++ -I" + llvm_path + "include/c++/v1\""
+      # Add `brew` to the path (used in the RNAStructViz Makefile): 
+      path_env = "PATH=\"/usr/local/bin:$PATH\" "
+      system "/bin/bash -c '" + path_env + rsv_env + " make'"
+    else
+      system "CFLAGS=\"\" CXXFLAGS=\"\" LDFLAGS=\"\" make"
+    end
     system "mv", "macos-application/RNAStructViz.app", "macos-application/RNAStructViz"
     system "cp", "src/RNAStructViz", "macos-application/RNAStructViz/Contents/MacOS/"
     system "cp", "-R", "macos-application/RNAStructViz", "macos-application/RNAStructViz.app"

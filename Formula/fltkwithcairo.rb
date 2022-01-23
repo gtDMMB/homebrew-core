@@ -1,10 +1,10 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
   homepage "https://www.fltk.org/software.php"
-  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.3.8-source.tar.bz2"
-  version "fltk-1.3.8"
-  sha256 "1d9832409fc08c908c64ab40ad9fd8b0e8af5d203651eb9690b810f41e2f412d"
-  revision 11
+  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.3.8-source-patched.tar.bz2"
+  version "fltk-1.3.8-source-patched"
+  sha256 "158ea9857623d73a3d9303c455266f055043dfd746e344f316a69fd2d4a5802d"
+  revision 13
 
   # To maintainers: If this brew package becomes deprecated, replace the @12 with @MORE_RECENT_VERSION
   #                 throughout this formula.
@@ -37,7 +37,7 @@ class Fltkwithcairo < Formula
     if sysarch == "x86_64"
       cflags = cflags_x86_64
     end
-    if swversion[3..4].ord >= 14
+    if MacOS.version >= :mojave
       compiler_flags += " -DROTATE "
     end
     include_flags = " -I /usr/local/opt/cairo/include/cairo"
@@ -52,6 +52,7 @@ class Fltkwithcairo < Formula
       "--enable-cairo",
       "--disable-debug",
       "--enable-threads",
+      "--enable-shared",
     ]
     system "make", "clean"
     system "./configure", *config_args, *config_env_vars
