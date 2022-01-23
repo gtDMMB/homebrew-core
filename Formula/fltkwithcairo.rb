@@ -1,10 +1,10 @@
 class Fltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
-  homepage "https://www.fltk.org/software.php?VERSION=1.4.x"
-  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.4.x-20220121-09eff724.tar.bz2"
-  version "fltk-1.4.x-20220121-09eff724"
-  sha256 "83b746103d0026f53a13a6c74422dd09baca9129710c9f97df0ee6ed5a412ee1"
-  revision 10
+  homepage "https://www.fltk.org/software.php"
+  url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.3.8-source.tar.bz2"
+  version "fltk-1.3.8"
+  sha256 "1d9832409fc08c908c64ab40ad9fd8b0e8af5d203651eb9690b810f41e2f412d"
+  revision 11
 
   # To maintainers: If this brew package becomes deprecated, replace the @12 with @MORE_RECENT_VERSION
   #                 throughout this formula.
