@@ -46,7 +46,6 @@ class Fltkwithcairo < Formula
       "CXX=" + macos_cxx + compiler_flags + " -arch " + sysarch + include_flags + macos_base_cflags,
       "CFLAGS=" + cflags,
       "LDFLAGS=" + macos_base_ldflags,
-      #"PATH=\"/usr/local/bin:$PATH\"",
     ]
     config_args = [
       "--prefix=#{prefix}",
@@ -57,13 +56,7 @@ class Fltkwithcairo < Formula
     ]
     system "make", "clean"
     system "./configure", *config_args, *config_env_vars
-    
-    make_cmd_comps = [
-      "/bin/bash -c'",
-      "PATH=\"/usr/local/bin:$PATH\"",
-      "make install'",
-    ]
-    system *make_cmd_comps
+    system "/bin/bash -c \'PATH=\"/usr/local/bin:$PATH\" make install\'"
   end
 
   test do
