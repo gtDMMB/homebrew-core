@@ -6,7 +6,7 @@ class Rnastructviz < Formula
   version "v2.4.14-stable"
   revision 7
   
-  bottle :unneeded
+  #bottle :unneeded
   
   depends_on "gtDMMB/core/fltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
