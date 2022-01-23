@@ -46,7 +46,7 @@ class Fltkwithcairo < Formula
       "CXX=" + macos_cxx + compiler_flags + " -arch " + sysarch + include_flags + macos_base_cflags,
       "CFLAGS=" + cflags,
       "LDFLAGS=" + macos_base_ldflags,
-      "PATH=\"/usr/local/bin:$PATH\"",
+      #"PATH=\"/usr/local/bin:$PATH\"",
     ]
     config_args = [
       "--prefix=#{prefix}",
