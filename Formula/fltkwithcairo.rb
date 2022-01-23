@@ -60,7 +60,7 @@ class Fltkwithcairo < Formula
     
     make_cmd_comps = [
       "/bin/bash -c'",
-      "PATH=\"/usr/local/bin:$PATH\",
+      "PATH=\"/usr/local/bin:$PATH\"",
       "make install'",
     ]
     system *make_cmd_comps
