@@ -1,4 +1,4 @@
-class Automake < Formula
+class Automake2 < Formula
   
   desc "A custom version of automake known to work with the build scripts for gtDMMB/core/gtfoldpython"
   url "ftp://ftp.gnu.org/gnu/automake/automake-1.16.2.tar.gz"
