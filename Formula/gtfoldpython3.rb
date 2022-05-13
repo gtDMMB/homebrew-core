@@ -2,10 +2,10 @@ class Gtfoldpython3 < Formula
   
   desc "Python3 interface (C bindings and wrapper library) around GTFold"
   homepage "https://github.com/gtDMMB/GTFoldPython"
-  url "https://github.com/gtDMMB/GTFoldPython/archive/refs/tags/v1.2-public-beta.tar.gz"
-  version "v1.2-public-beta"
-  sha256 "49fab02d24f86c0d5c1181387b89ed671fd37b0eb57649d16353936fcf4bff02"
-  revision 4
+  url "https://github.com/gtDMMB/GTFoldPython/archive/refs/tags/v1.2.2-public-beta.tar.gz"
+  version "v1.2.2-public-beta"
+  sha256 "dc46a0c1826118260e35cd4ff60918efdc77e8a464679a4f2470455f84795eaf"
+  revision 5
 
   depends_on "llvm@12"
   depends_on "coreutils"
