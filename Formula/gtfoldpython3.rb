@@ -17,8 +17,8 @@ class Gtfoldpython3 < Formula
   depends_on "libtool"
   depends_on "autoconf-archive"
   depends_on "binutils"
-  depends_on "gtDMMB/core/autoconf"
-  depends_on "gtDMMB/core/automake"
+  depends_on "gtDMMB/core/autoconf2"
+  depends_on "gtDMMB/core/automake2"
   depends_on :macos
 
   def install
