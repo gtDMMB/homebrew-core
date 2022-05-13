@@ -5,7 +5,7 @@ class Gtfoldpython3 < Formula
   url "https://github.com/gtDMMB/GTFoldPython/archive/refs/tags/v1.0-public-beta.tar.gz"
   version "v1.0-public-beta"
   sha256 "dcbf5c539582199367d452ec84b4194cc51916ea24c94feb93af91adbf3947e4"
-  revision 1
+  revision 2
 
   depends_on "llvm@12"
   depends_on "coreutils"
@@ -17,8 +17,8 @@ class Gtfoldpython3 < Formula
   depends_on "libtool"
   depends_on "autoconf-archive"
   depends_on "binutils"
-  depends_on "gtDMMB/core/autoconf@2.69"
-  depends_on "gtDMMB/core/automake@1.16.2"
+  depends_on "gtDMMB/core/autoconf"
+  depends_on "gtDMMB/core/automake"
   depends_on :macos
 
   def install
