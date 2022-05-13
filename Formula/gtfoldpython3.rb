@@ -2,10 +2,10 @@ class Gtfoldpython3 < Formula
   
   desc "Python3 interface (C bindings and wrapper library) around GTFold"
   homepage "https://github.com/gtDMMB/GTFoldPython"
-  url "https://github.com/gtDMMB/GTFoldPython/archive/refs/tags/v1.2.2-public-beta.tar.gz"
-  version "v1.2.2-public-beta"
-  sha256 "dc46a0c1826118260e35cd4ff60918efdc77e8a464679a4f2470455f84795eaf"
-  revision 5
+  url "https://github.com/gtDMMB/GTFoldPython/archive/refs/tags/v1.2.3-public-beta.tar.gz"
+  version "v1.2.3-public-beta"
+  sha256 ""
+  revision 7
 
   depends_on "llvm@12"
   depends_on "coreutils"
@@ -17,12 +17,15 @@ class Gtfoldpython3 < Formula
   depends_on "libtool"
   depends_on "autoconf-archive"
   depends_on "binutils"
-  depends_on "gtDMMB/core/autoconf2"
-  depends_on "gtDMMB/core/automake2"
+  depends_on "autoconf"
+  depends_on "automake"
+  #depends_on "gtDMMB/core/autoconf2"
+  #depends_on "gtDMMB/core/automake2"
   depends_on :macos
 
   def install
     Dir.chdir("Python")
+    system "make", "local-clean"
     system "make", "clean"
     system "make"
     system "rm Lib/*.o"
