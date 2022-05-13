@@ -4,20 +4,25 @@ class Autoconf2 < Formula
   url "ftp://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz"
   version "2.69"
   sha256 "954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969"
-  revision 3
+  revision 4
   
   depends_on :macos
   
   def install
+    if OS.mac?
+      ENV["PERL"] = "/usr/bin/perl"
+      # Force autoreconf to look for and use our glibtoolize:
+      inreplace "bin/autoreconf.in", "libtoolize", "glibtoolize"
+    end
     system "./configure"
     system "make"
     bin.install "bin/autoconf"
-    bin.install "bin/autoheader"
-    bin.install "bin/autom4te"
+    #bin.install "bin/autoheader"
+    #bin.install "bin/autom4te"
     bin.install "bin/autoreconf"
-    bin.install "bin/autoscan"
-    bin.install "bin/autoupdate"
-    bin.install "bin/ifnames"
+    #bin.install "bin/autoscan"
+    #bin.install "bin/autoupdate"
+    #bin.install "bin/ifnames"
   end
   
   test do
