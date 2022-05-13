@@ -4,7 +4,10 @@ class Automake2 < Formula
   url "ftp://ftp.gnu.org/gnu/automake/automake-1.16.2.tar.gz"
   version "1.16.2"
   sha256 "b2f361094b410b4acbf4efba7337bdb786335ca09eb2518635a09fb7319ca5c1"
-  revision 1
+  revision 2
+  
+  depends_on "gtDMMB/core/autoconf2"
+  depends_on :macos
   
   def install
     system "./configure"
