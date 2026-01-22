@@ -4,7 +4,7 @@ class Fltkwithcairo < Formula
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.3.8-source-patched.tar.bz2"
   version "fltk-1.3.8-source-patched"
   sha256 "158ea9857623d73a3d9303c455266f055043dfd746e344f316a69fd2d4a5802d"
-  revision 15
+  revision 16
 
   # To maintainers: If this brew package becomes deprecated, replace the @12 with @MORE_RECENT_VERSION
   #                 throughout this formula.
