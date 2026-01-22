@@ -23,7 +23,8 @@ class Macportsrnastructviz < Formula
 
   def install
     if MacOS.version >= :catalina
-      llvm_path = "/usr/local/opt/llvm@12/"
+      #llvm_path = "/usr/local/opt/llvm@12/"
+      llvm_path = "/usr/local/bin/"
       rsv_env = "STRUCTVIZ_COMPILER=\"" + llvm_path + "bin/clang++ -nostdinc++ -I" + llvm_path + "include/c++/v1\""
       # Add `brew` to the path (used in the RNAStructViz Makefile): 
       path_env = "PATH=\"/usr/local/bin:$PATH\" "
