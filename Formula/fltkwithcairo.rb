@@ -12,7 +12,7 @@ class Fltkwithcairo < Formula
   depends_on "jpeg"
   depends_on "libffi"
   depends_on "libpng"
-  depends_on "llvm@12"
+  depends_on "llvm"
   depends_on :macos
   depends_on "wget"
 
