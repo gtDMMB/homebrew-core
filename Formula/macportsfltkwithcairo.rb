@@ -1,4 +1,4 @@
-class Fltkwithcairo < Formula
+class Macportsfltkwithcairo < Formula
   desc "Latest non-stable branch of FLTK *with* Cairo and Apple-specific support enabled"
   homepage "https://www.fltk.org/software.php"
   url "https://github.com/gtDMMB/homebrew-core/raw/master/LocalPatches/fltk-1.3.8-source-patched.tar.bz2"
