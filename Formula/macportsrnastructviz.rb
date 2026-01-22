@@ -14,7 +14,7 @@ class Macportsrnastructviz < Formula
   depends_on "grep"
   depends_on "gnu-sed"
   depends_on "openssl@1.1"
-  depends_on "boost"
+  #depends_on "boost"
 
   # To maintainers: If this brew package becomes deprecated, replace the @12 with @MORE_RECENT_VERSION
   #                 throughout this formula.
