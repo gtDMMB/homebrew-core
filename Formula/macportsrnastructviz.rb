@@ -6,7 +6,7 @@ class Macportsrnastructviz < Formula
   version "v2.4.18-beta"
   revision 2
   
-  depends_on "gtDMMB/core/fltkwithcairo"
+  depends_on "gtDMMB/core/macportsfltkwithcairo"
   depends_on "gtDMMB/core/viennarna"
   depends_on "pkg-config"
   depends_on "curl"
